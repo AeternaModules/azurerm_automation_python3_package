@@ -1,3 +1,7 @@
+output "automation_python3_packages_id" {
+  description = "Map of id values across all automation_python3_packages, keyed the same as var.automation_python3_packages"
+  value       = { for k, v in azurerm_automation_python3_package.automation_python3_packages : k => v.id }
+}
 output "automation_python3_packages_automation_account_name" {
   description = "Map of automation_account_name values across all automation_python3_packages, keyed the same as var.automation_python3_packages"
   value       = { for k, v in azurerm_automation_python3_package.automation_python3_packages : k => v.automation_account_name }
